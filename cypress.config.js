@@ -22,4 +22,11 @@ module.exports = defineConfig({
 
     },
   },
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportFilename: "[name]-result",
+    overwrite: false,
+    html: true,
+    json: true,
+  },
 });

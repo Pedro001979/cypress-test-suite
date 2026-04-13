@@ -9,24 +9,20 @@ describe('Teste de Autenticação', () => {
     cy.login(email, senha)
   })
 
-  it('categories should be visible', () => {
+  it('Adiconar item ao carrinho', () => {
     cy.intercept('GET', '**/public/getCategories', { fixture: 'categories.json' }).as('getCategories')
-    homePage.openSearchProduct()
-    homePage.openCategoriesFilter()
-    homePage.categories().should('have.length.greaterThan', 1)
+    homePage.addProduto()
   })
 
-  it('categories should be empty', () => {
-    cy.intercept('GET', '**/public/getCategories', { fixture: 'noCategories.json' }).as('getCategoriesEmpty')
-    homePage.openSearchProduct()
-    homePage.openCategoriesFilter()
-    homePage.categories().should('have.length', 1)
+  it('Removendo item do carrinho', () => {
+    cy.intercept('GET', '**/public/getCategories', { fixture: 'categories.json' }).as('getCategories')
+    homePage.removeProduto()
   })
 
-  it('categories should be empty with error', () => {
-    cy.intercept('GET', '**/public/getCategories', { statusCode: 500 }).as('getCategoriesError')
-    homePage.openSearchProduct()
-    homePage.openCategoriesFilter()
-    homePage.categories().should('have.length', 1)
+  it('Atualizar item no carrinho', () => {
+      cy.intercept('GET', '**/public/getCategories', { fixture: 'categories.json' }).as('getCategories')
+      homePage.addProduto()
+      homePage.atualizarProduto()
+
   })
 })
