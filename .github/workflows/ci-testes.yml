@@ -16,15 +16,19 @@ jobs:
       - name: Configurar o Node.js
         uses: actions/setup-node@v4
         with:
-            node-version: 22
-            cache: 'npm'
+          node-version: 22
 
-      - name: Instalar Dependências
-        run: npm ci
+      - name: Instalar dependências e Rodar Cypress
+        uses: cypress-io/github-action@v6
+        with:
+           command: npm run test:ci
 
-      - name: Rodar testes do Cypress
-        run: npm run test:ci
-        continue-on-error: true
+    #   - name: Instalar Dependências
+    #     run: npm ci
+
+    #   - name: Rodar testes do Cypress
+    #     run: npm run test:ci
+    #     continue-on-error: true
 
       - name: Publish Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
