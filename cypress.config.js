@@ -27,6 +27,6 @@ module.exports = defineConfig({
     reportFilename: "[name]-result",
     overwrite: false,
     html: true,
-    json: true,
+    json: false,
   },
 });
