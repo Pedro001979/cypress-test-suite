@@ -16,7 +16,7 @@ jobs:
       - name: Configurar o Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
       - name: Instalar dependências e Rodar Cypress
         uses: cypress-io/github-action@v6
