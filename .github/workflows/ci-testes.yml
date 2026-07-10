@@ -2,30 +2,29 @@ name: EBAC CI - Cypress Suite
 
 on:
   push:
-    branches: [ci]
+    branches: [ ci ]
 
   workflow_dispatch:
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Copiar o código do repositório
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Configurar o Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
 
-      - name: Rodar Cypress
+      - name: Instalar dependências e Rodar Cypress
         uses: cypress-io/github-action@v6
         with:
-          install-command: npm ci
-          command: npm run test:ci
+           command: npm run test:ci
 
       - name: Publish Report to GitHub Pages
-        if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
