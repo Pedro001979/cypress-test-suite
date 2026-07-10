@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-04-13T20:28:25.209Z",
+    "end": "2026-04-13T20:28:49.468Z",
+    "duration": 24259,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ee3b4d1f-6a23-4b44-9d67-e8062b49e2bb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\intercept.cy.js",
+      "file": "cypress\\e2e\\intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b35588ee-c655-4af0-a7ef-af89692d305e",
+          "title": "Teste de Autenticação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adiconar item ao carrinho",
+              "fullTitle": "Teste de Autenticação Adiconar item ao carrinho",
+              "timedOut": null,
+              "duration": 7921,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('GET', '**/public/getCategories', {\n  fixture: 'categories.json'\n}).as('getCategories');\nhomePage.addProduto();",
+              "err": {},
+              "uuid": "68da545e-bd92-43f1-86d8-d53ca2f0459e",
+              "parentUUID": "b35588ee-c655-4af0-a7ef-af89692d305e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Removendo item do carrinho",
+              "fullTitle": "Teste de Autenticação Removendo item do carrinho",
+              "timedOut": null,
+              "duration": 6036,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('GET', '**/public/getCategories', {\n  fixture: 'categories.json'\n}).as('getCategories');\nhomePage.removeProduto();",
+              "err": {},
+              "uuid": "94ee9e3a-8cdc-4289-b755-d572cfaec739",
+              "parentUUID": "b35588ee-c655-4af0-a7ef-af89692d305e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Atualizar item no carrinho",
+              "fullTitle": "Teste de Autenticação Atualizar item no carrinho",
+              "timedOut": null,
+              "duration": 10140,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('GET', '**/public/getCategories', {\n  fixture: 'categories.json'\n}).as('getCategories');\nhomePage.addProduto();\nhomePage.atualizarProduto();",
+              "err": {},
+              "uuid": "9b94c9cf-c471-4efe-8612-174704ddbc21",
+              "parentUUID": "b35588ee-c655-4af0-a7ef-af89692d305e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "68da545e-bd92-43f1-86d8-d53ca2f0459e",
+            "94ee9e3a-8cdc-4289-b755-d572cfaec739",
+            "9b94c9cf-c471-4efe-8612-174704ddbc21"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24097,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-result",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "[name]-result",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

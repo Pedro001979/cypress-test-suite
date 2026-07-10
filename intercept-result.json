@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-04-13T20:27:08.680Z",
+    "end": "2026-04-13T20:27:36.029Z",
+    "duration": 27349,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "16a27381-5501-4940-8b43-8755b870b780",
+      "title": "",
+      "fullFile": "cypress\\e2e\\intercept.cy.js",
+      "file": "cypress\\e2e\\intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3443c616-271c-4dd7-9339-1a1feb43ae22",
+          "title": "Teste de Autenticação",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adiconar item ao carrinho",
+              "fullTitle": "Teste de Autenticação Adiconar item ao carrinho",
+              "timedOut": null,
+              "duration": 7997,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('GET', '**/public/getCategories', {\n  fixture: 'categories.json'\n}).as('getCategories');\nhomePage.addProduto();",
+              "err": {},
+              "uuid": "4ad6c2ec-2fe4-44a0-bddb-1c09969bfbe1",
+              "parentUUID": "3443c616-271c-4dd7-9339-1a1feb43ae22",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Removendo item do carrinho",
+              "fullTitle": "Teste de Autenticação Removendo item do carrinho",
+              "timedOut": null,
+              "duration": 8608,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('GET', '**/public/getCategories', {\n  fixture: 'categories.json'\n}).as('getCategories');\nhomePage.removeProduto();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"remove\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-testid=\"remove\"]`, but never found it.\n    at Object.removeProduto (webpack://cy-intercept/./cypress/support/pages/home.page.js:16:11)\n    at Context.eval (webpack://cy-intercept/./cypress/e2e/intercept.cy.js:19:13)",
+                "diff": null
+              },
+              "uuid": "cb68e572-0102-4642-b076-6e8bbdd00ae7",
+              "parentUUID": "3443c616-271c-4dd7-9339-1a1feb43ae22",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Atualizar item no carrinho",
+              "fullTitle": "Teste de Autenticação Atualizar item no carrinho",
+              "timedOut": null,
+              "duration": 10564,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('GET', '**/public/getCategories', {\n  fixture: 'categories.json'\n}).as('getCategories');\nhomePage.addProduto();\nhomePage.atualizarProduto();",
+              "err": {},
+              "uuid": "f771d501-e5d2-473e-b651-43dc79f9dcb5",
+              "parentUUID": "3443c616-271c-4dd7-9339-1a1feb43ae22",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4ad6c2ec-2fe4-44a0-bddb-1c09969bfbe1",
+            "f771d501-e5d2-473e-b651-43dc79f9dcb5"
+          ],
+          "failures": [
+            "cb68e572-0102-4642-b076-6e8bbdd00ae7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27169,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-result",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportFilename": "[name]-result",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
