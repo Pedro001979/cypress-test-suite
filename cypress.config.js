@@ -2,31 +2,32 @@ const { defineConfig } = require("cypress");
 const { tabNavigation, setDebuggingPort } = require("./cypress/support/utils/tabNavigation");
 
 module.exports = defineConfig({
-  e2e: {
-    baseUrl: 'http://lojaebac.ebaconline.art.br/',
-    setupNodeEvents(on, config) {
+      projectId: "whi64n",
+      e2e: {
+        baseUrl: 'http://lojaebac.ebaconline.art.br/',
+        setupNodeEvents(on, config) {
 
-      on('before:browser:launch', (browser = {}, launchOptions) => {
-        if (browser.name === 'chrome') {
-          const debuggingPort = launchOptions.args.find(
-            (arg) => arg.slice(0, 23) === '--remote-debugging-port',
-          );
-          setDebuggingPort(debuggingPort.split('='));
-        }
-        return launchOptions;
-      });
+          on('before:browser:launch', (browser = {}, launchOptions) => {
+            if (browser.name === 'chrome') {
+              const debuggingPort = launchOptions.args.find(
+                (arg) => arg.slice(0, 23) === '--remote-debugging-port',
+              );
+              setDebuggingPort(debuggingPort.split('='));
+            }
+            return launchOptions;
+          });
 
-      on('task', {
-        tabNavigation
-      });
+          on('task', {
+            tabNavigation
+          });
 
-    },
-  },
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportFilename: "[name]-result",
-    overwrite: false,
-    html: true,
-    json: true,
-  },
-});
+        },
+      },
+      reporter: 'mochawesome',
+      reporterOptions: {
+        reportFilename: "[name]-result",
+        overwrite: false,
+        html: true,
+        json: true,
+      },
+    });
