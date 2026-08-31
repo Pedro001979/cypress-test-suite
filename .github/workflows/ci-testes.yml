@@ -3,12 +3,15 @@ name: EBAC CI - Cypress Suite
 on:
   push:
     branches: [ ci ]
-
   workflow_dispatch:
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2]
     steps:
       - name: Copiar o código do repositório
         uses: actions/checkout@v4
@@ -19,12 +22,18 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Instalar dependências e Rodar Cypress
+      - name: Instalar dependências e Executar Cypress no Cloud
         uses: cypress-io/github-action@v6
         with:
-           command: npm run test:ci
+          command: npm run test:ci
+          record: true
+          parallel: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish Report to GitHub Pages
+        if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
