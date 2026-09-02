@@ -1,3 +1,3 @@
-import loginPage from './login.'
+import loginPage from './login.page'
 
 export { loginPage }
