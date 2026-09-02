@@ -1,6 +1,4 @@
-# Exercícios Módulo 4
-
-Este repositório contém exercícios práticos desenvolvidos durante o módulo 4, focado em testes automatizados e validação de funcionalidades usando a framework Cypress.
+Este repositório contém resoluçoes praticas focado em testes automatizados e validação de funcionalidades usando a framework Cypress.
 
 ## Sobre o Projeto
 
