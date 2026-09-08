@@ -1,85 +1,83 @@
-Este repositório contém resoluçoes praticas focado em testes automatizados e validação de funcionalidades usando a framework Cypress.
+# Cypress Test Suite
 
-## Sobre o Projeto
+![Cypress](https://img.shields.io/badge/Cypress-13.x-17202C?logo=cypress&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
+![Mochawesome](https://img.shields.io/badge/Reports-Mochawesome-6C63FF)
+![License](https://img.shields.io/badge/license-ISC-blue)
 
-O projeto foi estruturado para explorar funcionalidades avançadas de testes end-to-end, incluindo interceptação de requisições, navegação entre abas e geração de relatórios detalhados. Todas as validações e testes são executados contra a aplicação de e-commerce [Loja EBAC](http://lojaebac.ebaconline.art.br/).
+> Automated end-to-end testing project focused on reliable UI validation, network interception, multi-tab navigation and test reporting.
 
-## Tecnologias Utilizadas
+## Overview
 
-- **Cypress** (v13.17.0) - Framework de testes end-to-end
-- **JavaScript** - Linguagem de implementação dos testes
-- **Mochawesome** (v7.1.4) - Gerador de relatórios em HTML
-- **Puppeteer** (v21.9.0) - Automação do navegador
-- **HTML** - Estrutura dos relatórios
+This project demonstrates practical automated testing against the **Loja EBAC** e-commerce application using Cypress. The suite explores real-world E2E techniques such as request interception, browser navigation between tabs and HTML/JSON test reporting.
 
-A composição do projeto é 61,8% HTML e 38,2% JavaScript.
+## Tech Stack
 
-## Estrutura do Repositório
+- **Cypress 13.17** — end-to-end test automation
+- **JavaScript** — test implementation
+- **Mochawesome** — HTML/JSON test reports
+- **Puppeteer** — browser automation support
+- **Node.js / npm** — project runtime and dependency management
 
-```
+## What this project demonstrates
+
+- End-to-end UI automation
+- Network request interception
+- Multi-tab / external navigation handling
+- Reusable Cypress utilities
+- Automated test execution from the command line
+- Mochawesome reporting
+
+## Project Structure
+
+```text
 .
-├── cypress/                 # Diretório principal da configuração Cypress
+├── cypress/
 │   └── support/
 │       └── utils/
-│           └── tabNavigation.js    # Utilitários para navegação entre abas
-├── mochawesome-report/      # Relatórios gerados após execução dos testes
-├── cypress.config.js        # Configuração principal do Cypress
-├── package.json            # Dependências do projeto
-├── package-lock.json       # Lock file das dependências
-└── .gitignore             # Arquivos ignorados pelo Git
+│           └── tabNavigation.js
+├── mochawesome-report/
+├── cypress.config.js
+├── package.json
+├── package-lock.json
+└── .gitignore
 ```
 
-## Configuração
+## Getting Started
 
-### Instalação
+### Requirements
 
-Para instalar as dependências do projeto, execute:
+- Node.js
+- npm
+- Access to the Loja EBAC test environment
+
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### Arquivo de Configuração
-
-O arquivo `cypress.config.js` define:
-
-- **Base URL**: `http://lojaebac.ebaconline.art.br/`
-- **Suporte a navegação entre abas**: Tarefa customizada para lidar com múltiplas abas do navegador
-- **Debugging**: Porta de debug do Chrome configurada dinamicamente
-- **Relatórios**: Gerados em formato HTML e JSON através do Mochawesome
-
-## Executando os Testes
-
-Para rodar a suite completa de testes:
+### Run the complete suite
 
 ```bash
 npm test
 ```
 
-Este comando executará todos os testes configurados e gerará um relatório automaticamente no diretório `mochawesome-report/`.
+### Reports
 
-## Utilities
+After execution, Mochawesome can be used to inspect the generated HTML/JSON results in `mochawesome-report/`.
 
-### Tab Navigation
+## Engineering Focus
 
-A aplicação implementa suporte customizado para navegação entre abas do navegador através do arquivo `cypress/support/utils/tabNavigation.js`. Isso permite:
+The repository is part of my QA Automation portfolio, with emphasis on maintainable test structure, realistic user flows, API-aware UI testing and actionable reporting.
 
-- Trocar entre múltiplas abas
-- Manter sincronização de estado durante testes
-- Debug facilitado com a porta de debugging do Chrome
+## Author
 
-## Relatórios
+**Pedro Ricardo**  
+QA Automation | JavaScript | Cypress | API Testing | Mobile Testing
 
-Os relatórios de testes são gerados automaticamente pelo Mochawesome e salvos em `mochawesome-report/`. Estes incluem:
+[![GitHub](https://img.shields.io/badge/GitHub-Pedro001979-181717?logo=github)](https://github.com/Pedro001979)
 
-- Resultados em formato JSON para integração
-- Relatório HTML interativo com visualização dos resultados
-- Histórico de múltiplas execuções (sem sobrescrita)
-
-## Autor
-
-Pedro Ricardo
-
-## Licença
+## License
 
 ISC
