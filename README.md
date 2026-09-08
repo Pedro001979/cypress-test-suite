@@ -1,83 +1,67 @@
-# Cypress Test Suite
+# Automação de Testes E2E — Cypress
 
 ![Cypress](https://img.shields.io/badge/Cypress-13.x-17202C?logo=cypress&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black)
-![Mochawesome](https://img.shields.io/badge/Reports-Mochawesome-6C63FF)
-![License](https://img.shields.io/badge/license-ISC-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?logo=javascript&logoColor=black)
+![Mochawesome](https://img.shields.io/badge/Relatórios-Mochawesome-6C63FF)
 
-> Automated end-to-end testing project focused on reliable UI validation, network interception, multi-tab navigation and test reporting.
+## Sobre o projeto
 
-## Overview
+Suíte de **testes automatizados End-to-End** desenvolvida com Cypress para validar fluxos de uma aplicação de e-commerce.
 
-This project demonstrates practical automated testing against the **Loja EBAC** e-commerce application using Cypress. The suite explores real-world E2E techniques such as request interception, browser navigation between tabs and HTML/JSON test reporting.
+O projeto demonstra técnicas importantes de automação Web, incluindo interceptação de requisições, navegação entre abas, reutilização de comandos e geração de evidências de execução.
 
-## Tech Stack
+## Cenários e técnicas
 
-- **Cypress 13.17** — end-to-end test automation
-- **JavaScript** — test implementation
-- **Mochawesome** — HTML/JSON test reports
-- **Puppeteer** — browser automation support
-- **Node.js / npm** — project runtime and dependency management
+- Testes de fluxos críticos de usuário
+- Validação de interface e comportamento
+- Interceptação e validação de requisições HTTP
+- Tratamento de navegação entre abas
+- Reutilização de comandos e helpers
+- Execução headless via linha de comando
+- Geração de relatórios HTML/JSON
 
-## What this project demonstrates
+## Stack
 
-- End-to-end UI automation
-- Network request interception
-- Multi-tab / external navigation handling
-- Reusable Cypress utilities
-- Automated test execution from the command line
-- Mochawesome reporting
+- Cypress 13
+- JavaScript
+- Node.js / npm
+- Mochawesome
+- Puppeteer para suporte a cenários específicos de navegação
 
-## Project Structure
+## Estrutura
 
 ```text
-.
-├── cypress/
-│   └── support/
-│       └── utils/
-│           └── tabNavigation.js
-├── mochawesome-report/
-├── cypress.config.js
-├── package.json
-├── package-lock.json
-└── .gitignore
+cypress/
+├── e2e/
+├── fixtures/
+├── support/
+│   └── utils/
+└── ...
+
+cypress.config.js
+package.json
 ```
 
-## Getting Started
-
-### Requirements
-
-- Node.js
-- npm
-- Access to the Loja EBAC test environment
-
-### Install dependencies
+## Execução
 
 ```bash
 npm install
-```
-
-### Run the complete suite
-
-```bash
 npm test
 ```
 
-### Reports
+Os resultados podem ser analisados pelos relatórios gerados após a execução da suíte.
 
-After execution, Mochawesome can be used to inspect the generated HTML/JSON results in `mochawesome-report/`.
+## O que este projeto demonstra
 
-## Engineering Focus
+Mais do que executar comandos no navegador, este projeto evidencia conhecimentos de **estratégia de automação, validação de comportamento, tratamento de dependências externas e geração de evidências**.
 
-The repository is part of my QA Automation portfolio, with emphasis on maintainable test structure, realistic user flows, API-aware UI testing and actionable reporting.
-
-## Author
+## Autor
 
 **Pedro Ricardo**  
-QA Automation | JavaScript | Cypress | API Testing | Mobile Testing
+QA Automation | Cypress | JavaScript | API | Mobile
 
-[![GitHub](https://img.shields.io/badge/GitHub-Pedro001979-181717?logo=github)](https://github.com/Pedro001979)
+[GitHub](https://github.com/Pedro001979) · [LinkedIn](https://www.linkedin.com/in/pedro-ricardo-6a3b76236/)
 
-## License
+---
 
-ISC
+Licença: ISC
